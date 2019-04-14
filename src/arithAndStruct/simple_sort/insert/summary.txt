@@ -1,0 +1,18 @@
+public void insertionSort() {
+		int in, out;
+		for (out = 1; out < nElems; out++) {
+			long temp = a[out];
+			in = out;
+			while (in > 0 && a[in -1] >= temp) {
+				a[in] = a[in -1];
+				--in;
+			}
+			a[in] = temp;
+		}// end for
+	}// end insertionSort
+	
+	1.out 为外层循环，从第一个位置开始，循环递增。
+	2.定义一个临时变量，将out赋值给temp。此时temp代表标记性的索引项。in 为标记变量左侧的变化索引。
+	3.当in - 1项，也就是标记位置的左侧项比标记位置大，那么将in - 1位置的项移到in位置处（或者说将in位置的项替换为in - 1的项）。位移完毕后索引in向左移动一位变成in - 1。
+	4.继续3步骤。
+	5.当in - 1 位置项比标记项要小结束循环。当前in位置的项 插入标记项。
